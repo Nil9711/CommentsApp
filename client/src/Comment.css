@@ -6,8 +6,16 @@
 
 ul {
   list-style-type: none;
+  margin-top: 4px;
 }
 
 .CommentsText {
-  width: 7rem;
+  width: 30rem;
+}
+
+.CommentsEmail {
+  font-size: 12px;
+}
+.CommentsDate {
+  font-size: 12px;
 }

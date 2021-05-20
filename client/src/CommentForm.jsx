@@ -46,25 +46,31 @@ const CommentForm = () => {
     <div className="CommentForm">
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            required
-            onChange={handleEmailChange}
-          />
+          <Form.Label className="CommentFormLabel">Email address</Form.Label>
+          <div className="CommentFormInputField">
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              required
+              onChange={handleEmailChange}
+              className="CommentFormInputEmail"
+            />
+          </div>
         </Form.Group>
 
         <Form.Group controlId="formBasicMessage">
-          <Form.Label>Message</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Message"
-            value={message}
-            required
-            onChange={handleMessageChange}
-          />
+          <Form.Label className="CommentFormLabel">Message</Form.Label>
+          <div className="CommentFormInputField">
+            <Form.Control
+              type="text"
+              placeholder="Message"
+              value={message}
+              required
+              onChange={handleMessageChange}
+              className="CommentFormInputMessage"
+            />
+          </div>
         </Form.Group>
         <Button variant="primary" type="submit" className="CommentForm-Button">
           Submit

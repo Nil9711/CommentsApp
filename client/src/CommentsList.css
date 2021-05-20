@@ -8,3 +8,8 @@
   border: 2px solid brown;
   height: 2rem;
 }
+
+.CommentsListContainer {
+  height: 570px;
+  overflow-y: scroll;
+}

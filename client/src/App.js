@@ -3,6 +3,7 @@ import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
 import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/commentsList" component={CommentsList} />
         <Route path="/" component={CommentsList} />
       </Switch>
+      <Footer />
     </>
   );
 }

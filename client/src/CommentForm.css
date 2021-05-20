@@ -8,3 +8,23 @@
   margin: auto;
   width: 10rem;
 }
+
+.CommentFormInputField {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+.CommentFormInputEmail {
+  width: 10%;
+}
+.CommentFormInputMessage {
+  width: 40%;
+}
+
+.CommentFormLabel {
+  display: flex;
+  justify-content: center;
+}

@@ -29,6 +29,7 @@ const CommentsList = () => {
       key={comment._id}
       image={comment.image}
       email={comment.email}
+      date={comment.date}
       message={comment.message}
     />
   ));
@@ -47,6 +48,7 @@ const CommentsList = () => {
           key={comment._id}
           image={comment.image}
           email={comment.email}
+          date={comment.date}
           message={comment.message}
         />
       ))
@@ -72,7 +74,9 @@ const CommentsList = () => {
           </Col>
         </Row>
       </Container>
-      {isFiltering ? filteredList : commentsList}
+      <div className="CommentsListContainer">
+        {isFiltering ? filteredList : commentsList}
+      </div>
     </>
   );
 };
