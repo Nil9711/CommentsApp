@@ -2,6 +2,8 @@ import "./CommentForm.css";
 import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const CommentForm = () => {
   const [email, setEmail] = useState("");
@@ -41,35 +43,33 @@ const CommentForm = () => {
     setMessage(e.target.value);
   };
   return (
-    <div className="CommentFormContainer">
-      <form onSubmit={handleSubmit}>
-        <label>Email: </label>
-        <input
-          className="CommentForm-Email"
-          type="text"
-          id="email"
-          name="email"
-          required
-          placeholder="Email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <br />
-        <label>Message: </label>
-        <input
-          className="CommentForm-Message"
-          placeholder="message"
-          type="text"
-          id="message"
-          name="message"
-          value={message}
-          required
-          onChange={handleMessageChange}
-        />
+    <div className="CommentForm">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            required
+            onChange={handleEmailChange}
+          />
+        </Form.Group>
 
-        <br />
-        <button className="CommentForm-Button">Submit!</button>
-      </form>
+        <Form.Group controlId="formBasicMessage">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Message"
+            value={message}
+            required
+            onChange={handleMessageChange}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit" className="CommentForm-Button">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 };
