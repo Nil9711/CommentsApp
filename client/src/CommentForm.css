@@ -1,0 +1,25 @@
+.CommentForm-Message {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 2rem;
+  width: 35rem;
+}
+.CommentForm-Email {
+  margin-top: 1rem;
+  height: 1rem;
+  width: 10rem;
+}
+.CommentForm-Button {
+  height: 2rem;
+  color: cadetblue;
+  background-color: antiquewhite;
+  width: 5rem;
+}
+
+.CommentFormContainer {
+  /* height: 1.5rem; */
+  /* width: 1.5rem; */
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,10 @@
+.CommentsListInputContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.CommentsListInput {
+  margin-top: 20px;
+  border: 2px solid brown;
+  height: 2rem;
+}

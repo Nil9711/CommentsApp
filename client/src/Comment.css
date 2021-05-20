@@ -1,0 +1,13 @@
+.Comment {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.CommentsText {
+  width: 7rem;
+}

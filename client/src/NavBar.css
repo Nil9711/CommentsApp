@@ -1,0 +1,23 @@
+.NavBarFlexContainer {
+  display: flex;
+  background-color: antiquewhite;
+  margin: 0;
+  height: 3rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.NavBarFlexLink {
+  margin: auto;
+}
+
+.NavBarLink {
+  text-decoration: none;
+  color: brown;
+}
+
+.NavBarFlexIcon {
+  height: 100px;
+  width: 100px;
+  margin-left: -2rem;
+}
