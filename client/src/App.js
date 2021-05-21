@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/commentsList" component={CommentsList} />
         <Route path="/" component={CommentsList} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

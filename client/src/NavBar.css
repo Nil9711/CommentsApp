@@ -1,6 +1,6 @@
 .NavBarFlexContainer {
   display: flex;
-  background-color: antiquewhite;
+  background-color: azure;
   margin: 0;
   height: 3rem;
   align-items: center;
@@ -9,11 +9,12 @@
 
 .NavBarFlexLink {
   margin: auto;
+  font-weight: bold;
 }
 
 .NavBarLink {
   text-decoration: none;
-  color: brown;
+  color: burlywood;
 }
 
 .NavBarFlexIcon {

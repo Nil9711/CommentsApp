@@ -4,13 +4,15 @@ import axios from "axios";
 import md5 from "md5";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { withRouter } from "react-router-dom";
 
-const CommentForm = () => {
+const CommentForm = ({ history, location }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     insertComment(email, message);
+    history.push("/");
   };
 
   const insertComment = (email, message) => {
@@ -23,13 +25,19 @@ const CommentForm = () => {
     const headers = {
       "Content-Type": "application/json",
     };
+
+    if (!checkIfValidImage(comment.image)) {
+      comment.image =
+        "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=robohash&f=y";
+    }
+
     axios
       .post("http://localhost:3001/api/comment", JSON.stringify(comment), {
         headers: headers,
       })
       .then(
         (response) => {
-          console.log(response);
+          // console.log(response);
         },
         (error) => {
           console.log(error);
@@ -42,6 +50,22 @@ const CommentForm = () => {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
+
+  const checkIfValidImage = (imgToCheck) => {
+    axios.get(imgToCheck).then(
+      (response) => {
+        if (response.headers["content-type"] === "image/png") {
+          console.log("img here");
+        } else {
+          console.log("no image");
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+
   return (
     <div className="CommentForm">
       <Form onSubmit={handleSubmit}>
@@ -80,4 +104,4 @@ const CommentForm = () => {
   );
 };
 
-export default CommentForm;
+export default withRouter(CommentForm);

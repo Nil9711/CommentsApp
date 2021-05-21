@@ -11,7 +11,6 @@ createComment = (req, res) => {
 
   const comment = new Comment(body);
   comment.date = new Date().toString().split(" GMT")[0];
-  comment.date = comment.date;
 
   if (!comment) {
     return res.status(400).json({ success: false, error: err });
