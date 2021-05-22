@@ -2,9 +2,6 @@ import "./CommentForm.css";
 import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { withRouter } from "react-router-dom";
 
 const CommentForm = ({ history, location }) => {
   const [email, setEmail] = useState("");
@@ -69,41 +66,40 @@ const CommentForm = ({ history, location }) => {
   };
 
   return (
-    <div className="CommentForm">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label className="CommentFormLabel">Email address</Form.Label>
-          <div className="CommentFormInputField">
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              required
-              onChange={handleEmailChange}
-              className="CommentFormInputEmail"
-            />
-          </div>
-        </Form.Group>
-
-        <Form.Group controlId="formBasicMessage">
-          <Form.Label className="CommentFormLabel">Message</Form.Label>
-          <div className="CommentFormInputField">
-            <Form.Control
+    <div id="form-main">
+      <div id="form-div">
+        <form className="form" id="form1" onSubmit={handleSubmit}>
+          <p className="email">
+            <input
+              name="email"
               type="text"
-              placeholder="Message"
-              value={message}
-              required
-              onChange={handleMessageChange}
-              className="CommentFormInputMessage"
+              onChange={handleEmailChange}
+              value={email}
+              className="validate[required,custom[email]] feedback-input"
+              id="email"
+              placeholder="Email"
             />
+          </p>
+
+          <p className="text">
+            <textarea
+              name="text"
+              className="validate[required,length[6,300]] feedback-input"
+              id="comment"
+              value={message}
+              onChange={handleMessageChange}
+              placeholder="Comment"
+            ></textarea>
+          </p>
+
+          <div className="submit">
+            <input type="submit" value="SEND" id="button-blue" />
+            <div className="ease"></div>
           </div>
-        </Form.Group>
-        <Button variant="primary" type="submit" className="CommentForm-Button">
-          Submit
-        </Button>
-      </Form>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default withRouter(CommentForm);
+export default CommentForm;

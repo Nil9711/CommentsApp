@@ -7,6 +7,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CommentForm from "./CommentForm";
 
 const CommentsList = () => {
   const [commentsData, setComments] = useState([]);
@@ -60,7 +61,7 @@ const CommentsList = () => {
   return (
     <>
       <Container>
-        <Row className="w-35">
+        <Row className="px-5 mx-5">
           <Col className="mt-3 ">
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
@@ -79,7 +80,8 @@ const CommentsList = () => {
       <div className="CommentsListContainer">
         {isFiltering ? filteredList : commentsList}
       </div>
-      <div className="CommentsListForm"></div>
+
+      <CommentForm />
     </>
   );
 };

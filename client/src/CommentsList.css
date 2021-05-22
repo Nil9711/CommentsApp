@@ -1,6 +1,7 @@
 .CommentsListInputContainer {
   display: flex;
   justify-content: center;
+  height: 290px;
 }
 
 .CommentsListInput {
@@ -10,10 +11,10 @@
 }
 
 .CommentsListContainer {
-  height: 570px;
+  height: 368px;
   overflow-y: scroll;
 }
 
 .CommentsListForm {
-  height: 250px;
+  height: 249px;
 }
