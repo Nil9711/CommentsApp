@@ -1,5 +1,6 @@
 const Comment = require("../models/comment-model");
 createComment = (req, res) => {
+  console.log(req);
   const body = req.body;
 
   if (!body) {

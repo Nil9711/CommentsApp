@@ -8,14 +8,11 @@ const CommentForm = ({ history, location }) => {
   const [message, setMessage] = useState("");
 
   const checkIfValidImage = (imgToCheck) => {
-    console.log(imgToCheck);
     axios.get(imgToCheck).then(
       (response) => {
         if (response.headers["content-type"].includes("image")) {
-          console.log("img here");
           return true;
         } else {
-          console.log("no image");
           return false;
         }
       },
@@ -38,6 +35,9 @@ const CommentForm = ({ history, location }) => {
     };
     const headers = {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers":
+        "Origin, X-Requested-With, Content-Type, Accept",
     };
 
     if (checkIfValidImage(comment.image) === false) {
@@ -46,7 +46,7 @@ const CommentForm = ({ history, location }) => {
     }
 
     axios
-      .post("http://localhost:3001/api/comment", JSON.stringify(comment), {
+      .post("/api/comment", JSON.stringify(comment), {
         headers: headers,
       })
       .then(
@@ -101,5 +101,4 @@ const CommentForm = ({ history, location }) => {
     </div>
   );
 };
-
 export default CommentForm;

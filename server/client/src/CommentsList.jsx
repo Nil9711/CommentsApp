@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Comment from "./Comment";
 import React, { useState, useEffect } from "react";
 import "./CommentsList.css";
@@ -13,11 +14,22 @@ const CommentsList = () => {
   const [commentsData, setComments] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers":
+      "Origin, X-Requested-With, Content-Type, Accept",
+  };
 
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await axios.get("http://localhost:3001/api/comments");
-      setComments(response.data.data);
+      const response = await axios
+        .get("/api/comments", headers)
+        .then((response) => {
+          setComments(response.data.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     };
 
     fetchComments();
