@@ -79,6 +79,7 @@ const CommentsList = () => {
       <div className="CommentsListContainer">
         {isFiltering ? filteredList : commentsList}
       </div>
+      <div className="CommentsListForm"></div>
     </>
   );
 };

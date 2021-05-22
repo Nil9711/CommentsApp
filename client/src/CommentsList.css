@@ -13,3 +13,7 @@
   height: 570px;
   overflow-y: scroll;
 }
+
+.CommentsListForm {
+  height: 250px;
+}

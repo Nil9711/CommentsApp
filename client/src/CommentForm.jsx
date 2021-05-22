@@ -10,6 +10,23 @@ const CommentForm = ({ history, location }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const checkIfValidImage = (imgToCheck) => {
+    console.log(imgToCheck);
+    axios.get(imgToCheck).then(
+      (response) => {
+        if (response.headers["content-type"].includes("image")) {
+          console.log("img here");
+          return true;
+        } else {
+          console.log("no image");
+          return false;
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
   const handleSubmit = (e) => {
     insertComment(email, message);
     history.push("/");
@@ -26,7 +43,7 @@ const CommentForm = ({ history, location }) => {
       "Content-Type": "application/json",
     };
 
-    if (!checkIfValidImage(comment.image)) {
+    if (checkIfValidImage(comment.image) === false) {
       comment.image =
         "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=robohash&f=y";
     }
@@ -49,21 +66,6 @@ const CommentForm = ({ history, location }) => {
   };
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
-  };
-
-  const checkIfValidImage = (imgToCheck) => {
-    axios.get(imgToCheck).then(
-      (response) => {
-        if (response.headers["content-type"] === "image/png") {
-          console.log("img here");
-        } else {
-          console.log("no image");
-        }
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
   };
 
   return (
