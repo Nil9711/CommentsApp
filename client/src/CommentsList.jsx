@@ -34,6 +34,8 @@ const CommentsList = () => {
     />
   ));
 
+  commentsList.reverse();
+
   const filterList = (e) => {
     if (e.target.value === "") {
       setIsFiltering(false);
