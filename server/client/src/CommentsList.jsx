@@ -72,28 +72,30 @@ const CommentsList = () => {
 
   return (
     <>
-      <Container>
-        <Row className="px-5 mx-5">
-          <Col className="mt-3 ">
-            <InputGroup className="mb-3">
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
-                placeholder="Filter with an email"
-                aria-label="Username"
-                onChange={filterList}
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
-          </Col>
-        </Row>
-      </Container>
-      <div className="CommentsListContainer">
-        {isFiltering ? filteredList : commentsList}
-      </div>
+      <div className="CommentsListAlign">
+        <Container>
+          <Row className="px-5 mx-5">
+            <Col className="mt-3 ">
+              <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                  placeholder="Filter with an email"
+                  aria-label="Username"
+                  onChange={filterList}
+                  aria-describedby="basic-addon1"
+                />
+              </InputGroup>
+            </Col>
+          </Row>
+        </Container>
+        <div className="CommentsListContainer">
+          {isFiltering ? filteredList : commentsList}
+        </div>
 
-      <CommentForm />
+        <CommentForm />
+      </div>
     </>
   );
 };

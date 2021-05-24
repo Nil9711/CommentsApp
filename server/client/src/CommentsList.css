@@ -18,3 +18,11 @@
 .CommentsListForm {
   height: 249px;
 }
+
+.CommentsListAlign {
+  height: 94vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
